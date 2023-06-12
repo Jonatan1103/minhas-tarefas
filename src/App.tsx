@@ -1,8 +1,13 @@
-function App() {
+import BarraLateral from './containers/BarraLateral'
+import ListaDeTarefas from './containers/ListaTarefas'
+import { Container } from './styles'
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>ola mundo</h1>
-    </div>
+    <Container>
+      <BarraLateral />
+      <ListaDeTarefas />
+    </Container>
   )
 }
 
