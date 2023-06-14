@@ -2,7 +2,11 @@ import { styled } from 'styled-components'
 
 import { Props } from '.'
 
-export const Card = styled.div<Props>`
+// como não preciso das propriedades contador e legenda, iremos omitir, pois o typescript acaba dando erro, pois a props que estamos importando aqui, que vem da pagina index.tsx, contém essas props.
+
+type CardProps = Omit<Props, 'contador' | 'legenda'>
+
+export const Card = styled.div<CardProps>`
   padding: 8px;
   border: 1px solid ${(props) => (props.ativo ? '#1e90ff' : '#a1a1a1')};
   background-color: ${(props) => (props.ativo ? '#fff' : '#fcfcfc')};
